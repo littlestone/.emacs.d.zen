@@ -91,6 +91,9 @@
 (global-set-key (kbd "C-c M-n") 'name-last-kbd-macro)
 (global-set-key (kbd "C-c M-m") 'apply-macro-to-region-lines)
 
+;; Help should search more than just commands
+(global-set-key (kbd "<help> a") 'apropos)
+
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c C-e") 'eval-and-replace)
 
@@ -132,11 +135,26 @@
 (global-set-key (kbd "M-Z") (lambda (char) (interactive "cZap to char: ") (zap-to-char 1 char)))
 (global-set-key (kbd "s-Z") (lambda (char) (interactive "cZap to char backwards: ") (zap-to-char -1 char)))
 
+;; Change word separators
+(global-unset-key (kbd "C-x +")) ;; used to be balance-windows
+(global-set-key (kbd "C-x + -") (λ (replace-region-by 's-dashed-words)))
+(global-set-key (kbd "C-x + _") (λ (replace-region-by 's-snake-case)))
+(global-set-key (kbd "C-x + c") (λ (replace-region-by 's-lower-camel-case)))
+(global-set-key (kbd "C-x + C") (λ (replace-region-by 's-upper-camel-case)))
+
 ;; Killing text
 (global-set-key [remap paredit-kill] (bol-with-prefix paredit-kill))
 (global-set-key [remap org-kill-line] (bol-with-prefix org-kill-line))
 (global-set-key [remap kill-line] (bol-with-prefix kill-line))
 (global-set-key (kbd "C-k") (bol-with-prefix kill-line))
+(global-set-key (kbd "M-h") 'kill-region-or-backward-word)
+
+;; Use M-w for copy-line if no active region
+(global-set-key (kbd "M-w") 'save-region-or-current-line)
+(global-set-key (kbd "M-W") (λ (save-region-or-current-line 1)))
+
+;; Manipulate whitespace
+(global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 ;; Copy the whole lines
 (global-set-key (kbd "C-c C-c") 'copy-whole-lines)
