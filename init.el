@@ -17,7 +17,7 @@
 (require 'init-sane-default)
 (require 'init-package)
 (require 'init-appearance)
-(require 'init-keybinding)
+(require 'init-key-bindings)
 
 ;; Message how long it took to load everything (minus packages)
 (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))

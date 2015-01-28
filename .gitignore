@@ -1,4 +1,6 @@
 /elpa/
 /server/
 /backup/
-/temp/
+/tmp/
+/projectile-bookmarks.eld
+/projectile.cache

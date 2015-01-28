@@ -5,6 +5,7 @@
 ;; List of packages to install
 (setq package-list '(ac-nrepl
                      ac-slime
+                     achievements
                      auto-complete
                      buffer-move
                      change-inner
@@ -19,6 +20,7 @@
                      fill-column-indicator
                      fold-this
                      flycheck
+                     flycheck-pos-tip
                      flymake-json
                      frame-cmds
                      frame-fns
@@ -26,7 +28,10 @@
                      golden-ratio
                      guide-key
                      helm
+                     helm-projectile
                      highlight-escape-sequences
+                     js2-mode
+                     js2-refactor
                      json-mode
                      litable
                      markdown-mode
@@ -37,9 +42,11 @@
                      multiple-cursors
                      paredit
                      paredit-everywhere
+                     perspective
                      prodigy
                      restclient
                      s
+                     simplezen
                      skewer-mode
                      slime
                      smarter-compile
@@ -85,12 +92,17 @@
 (require 'init-magit)
 (require 'init-slime)
 (require 'init-cider)
+(require 'init-rgrep)
 (require 'init-hippie)
+(require 'init-skewer)
 (require 'init-paredit)
 (require 'init-flycheck)
-(require 'init-mode-mapping)
+(require 'init-js2-mode)
+(require 'init-html-mode)
+(require 'init-perspective)
 (require 'init-auto-complete)
 (require 'init-markdown-mode)
+(require 'init-mode-mappings)
 (require 'init-misc)
 
 ;; Load all user defined elisp functions
@@ -102,9 +114,9 @@
 ;; Displays the available key bindings automatically and dynamically
 (progn
   (require 'guide-key)
-  ;; the guide buffer is popped up when you input "C-x r", "C-x 8"
-  ;; and any other prefixes following "C-x"
-  (setq guide-key/guide-key-sequence '("C-x"))
+  ;; the guide buffer is popped up when you input "C-x r", "C-x 8", "C-x v",
+  ;; "C-x 4", "C-x +", "C-c" and any other prefixes following "C-x"
+  (setq guide-key/guide-key-sequence '("C-x" "C-x r" "C-x 8" "C-x v" "C-x 4" "C-x +" "C-c"))
   (guide-key-mode 1)
   (setq guide-key/recursive-key-sequence-flag t)
   ;; specific settings for org-mode
@@ -114,14 +126,17 @@
     (guide-key/add-local-highlight-command-regexp "org-"))
   (add-hook 'org-mode-hook 'guide-key/my-hook-function-for-org-mode))
 
+;; A fun way to learn about Emacs
+(require 'achievements)
+
 ;; Frame and window commands
 (require 'frame-cmds)
 (require 'frame-fns)
 (require 'zoom-frm)
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
-(setq undo-tree-mode-lighter "")
 (require 'undo-tree)
+(setq undo-tree-mode-lighter "")
 (global-undo-tree-mode)
 
 ;; Move current line or region with M-up or M-down

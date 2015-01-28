@@ -116,7 +116,7 @@
 (global-set-key (kbd "C-!") 'mf/mirror-region-in-multifile)
 
 ;; Indentation help
-(global-set-key (kbd "M-j") (lambda (join-line -1)))
+(global-set-key (kbd "M-j") (λ (join-line -1)))
 
 ;; Comment/uncomment block
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
@@ -247,4 +247,4 @@
 ;; Turn on the tool bar for exploring speed buttons
 (global-set-key (kbd "<C-S-f10>") 'tool-bar-mode)
 
-(provide 'init-keybinding)
+(provide 'init-key-bindings)

@@ -1,3 +1,7 @@
+;;; ======================================
+;;; + Emacs Mode Mappings Configurations +
+;;; ======================================
+
 ;; YAML
 (autoload 'yaml-mode "yaml-mode")
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
@@ -53,4 +57,4 @@
 (add-to-list 'auto-mode-alist '("\\.mq4$" . mql-mode))
 (add-to-list 'auto-mode-alist '("\\.mq5$" . mql-mode))
 
-(provide 'init-mode-mapping)
+(provide 'init-mode-mappings)

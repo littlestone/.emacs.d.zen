@@ -133,11 +133,11 @@
 ;; Write temporary files to own directory
 (progn
   ;; create temp directory if not exists
-  (defvar --temporary-directory (concat user-emacs-directory "temp"))
+  (defvar --temporary-directory (concat user-emacs-directory "tmp"))
   (if (not (file-exists-p --temporary-directory))
       (make-directory --temporary-directory))
   ;; move all temporary file to its own directory
-  (setq temporary-file-directory (concat user-emacs-directory "temp/")
+  (setq temporary-file-directory (concat user-emacs-directory "tmp/")
         eww-bookmarks-directory temporary-file-directory
         save-place-file (expand-file-name "places" temporary-file-directory)
         savehist-file (expand-file-name "history" temporary-file-directory)
@@ -145,7 +145,7 @@
         abbrev-file-name (expand-file-name "abbrev_defs" temporary-file-directory)
         tramp-persistency-file-name (expand-file-name "tramp" temporary-file-directory)
         ido-save-directory-list-file (expand-file-name "ido.last" temporary-file-directory)
-        auto-save-list-file-prefix "~/.emacs.d/temp/auto-save-list/.saves-"
+        auto-save-list-file-prefix (expand-file-name ".saves-" (concat temporary-file-directory "auto-save-list"))
         auto-save-file-name-transforms `((".*" ,temporary-file-directory t))))
 
 ;; Write backup files to own directory
