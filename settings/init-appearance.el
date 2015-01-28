@@ -20,6 +20,11 @@
 (setq hl-line-face 'hl-line)
 (global-hl-line-mode t) ; turn it on for all modes by default
 
+;; Highlight escape sequences
+(require 'highlight-escape-sequences)
+(hes-mode)
+(put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
+
 ;; Graphically indicate the location of the fill column
 (setq fci-rule-width 2)
 (setq fci-rule-column 80)
@@ -52,20 +57,21 @@
 ;; Unclutter the modeline
 (progn
   (require 'diminish)
-  (eval-after-load "abbrev" '(diminish 'abbrev-mode))
+  (eval-after-load "helm" '(diminish 'helm-mode))
   (eval-after-load "eldoc" '(diminish 'eldoc-mode))
+  (eval-after-load "magit" '(diminish 'magit-auto-revert-mode))
+  (eval-after-load "abbrev" '(diminish 'abbrev-mode))
+  (eval-after-load "subword" '(diminish 'subword-mode))
   (eval-after-load "paredit" '(diminish 'paredit-mode))
   (eval-after-load "tagedit" '(diminish 'tagedit-mode))
-  (eval-after-load "magit" '(diminish 'magit-auto-revert-mode))
-  (eval-after-load "elisp-slime-nav" '(diminish 'elisp-slime-nav-mode))
-  (eval-after-load "skewer-mode" '(diminish 'skewer-mode))
-  (eval-after-load "skewer-css" '(diminish 'skewer-css-mode))
-  (eval-after-load "skewer-html" '(diminish 'skewer-html-mode))
-  (eval-after-load "golden-ratio" '(diminish 'golden-ratio-mode))
   (eval-after-load "guide-key" '(diminish 'guide-key-mode))
   (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
-  (eval-after-load "whitespace-cleanup-mode" '(diminish 'whitespace-cleanup-mode))
-  (eval-after-load "subword" '(diminish 'subword-mode))
+  (eval-after-load "skewer-css" '(diminish 'skewer-css-mode))
+  (eval-after-load "skewer-html" '(diminish 'skewer-html-mode))
+  (eval-after-load "skewer-mode" '(diminish 'skewer-mode))
+  (eval-after-load "golden-ratio" '(diminish 'golden-ratio-mode))
+  (eval-after-load "auto-complete" '(diminish 'auto-complete-mode))
+  (eval-after-load "elisp-slime-nav" '(diminish 'elisp-slime-nav-mode))
 
   (defmacro rename-modeline (package-name mode new-name)
     `(eval-after-load ,package-name

@@ -48,18 +48,6 @@
   (setq helm-grep-default-command "ack-grep -Hn --no-group --no-color %e %p %f"
         helm-grep-default-recurse-command "ack-grep -H --no-group --no-color %e %p %f"))
 
-;; Enable helm-projectile
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(setq projectile-indexing-method 'alien)
-(setq projectile-switch-project-action 'helm-projectile-find-file)
-(setq projectile-switch-project-action 'helm-projectile)
-(add-to-list 'projectile-other-file-alist '("html" "js")) ;; switch from html -> js
-(add-to-list 'projectile-other-file-alist '("js" "html")) ;; switch from js -> html
-(add-to-list 'projectile-globally-ignored-directories "backup")
-(setq projectile-enable-caching t)
-(helm-projectile-on)
-
 ;; Now activate helm
 (helm-mode 1)
 

@@ -5,7 +5,6 @@
 ;; List of packages to install
 (setq package-list '(ac-nrepl
                      ac-slime
-                     achievements
                      auto-complete
                      buffer-move
                      change-inner
@@ -28,7 +27,6 @@
                      golden-ratio
                      guide-key
                      helm
-                     helm-projectile
                      highlight-escape-sequences
                      js2-mode
                      js2-refactor
@@ -43,7 +41,6 @@
                      paredit
                      paredit-everywhere
                      perspective
-                     prodigy
                      restclient
                      s
                      simplezen
@@ -126,9 +123,6 @@
     (guide-key/add-local-highlight-command-regexp "org-"))
   (add-hook 'org-mode-hook 'guide-key/my-hook-function-for-org-mode))
 
-;; A fun way to learn about Emacs
-(require 'achievements)
-
 ;; Frame and window commands
 (require 'frame-cmds)
 (require 'frame-fns)
@@ -170,10 +164,5 @@
 ;; First install jsonlint, e.g. via npm:
 ;; npm install jsonlint -g
 (add-hook 'json-mode 'flymake-json-load)
-
-;; Highlight escape sequences
-(require 'highlight-escape-sequences)
-(hes-mode)
-(put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
 
 (provide 'init-package)
