@@ -236,7 +236,7 @@
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
 ;; Emacs package manager
-(global-set-key (kbd "C-x p") 'package-list-packages)
+(global-set-key (kbd "C-x M-p") 'package-list-packages)
 
 ;; Emacs git interface
 (global-set-key (kbd "C-x m") 'magit-status)
