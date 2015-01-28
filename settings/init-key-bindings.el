@@ -226,8 +226,8 @@
 ;; Open the current file or dired marked files in external app
 (global-set-key (kbd "<f6>") 'ergoemacs-open-in-external-app)
 
-;; Manage external services from within Emacs
-(global-set-key (kbd "<C-f6>") 'prodigy)
+;; Manage system process from within Emacs
+(global-set-key (kbd "<C-f6>") 'proced)
 
 ;; Toggle linum-mode
 (global-set-key (kbd "<f7>") 'linum-mode)
