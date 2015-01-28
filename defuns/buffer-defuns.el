@@ -1,4 +1,6 @@
-;;; Buffer-related defuns
+;;; =========================
+;;; + Buffer-related defuns +
+;;; =========================
 
 (require 'imenu)
 

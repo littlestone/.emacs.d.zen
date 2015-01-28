@@ -1,4 +1,6 @@
-;;; My personal defuns goes here
+;;; ================================
+;;; + My personal defuns goes here +
+;;; ================================
 
 ;; Quickly goto *scratch* buffer
 (defun goto-scratch ()

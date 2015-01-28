@@ -1,4 +1,6 @@
-;;; Lisp specific defuns
+;;; ========================
+;;; + Lisp specific defuns +
+;;; ========================
 
 (defun eval-and-replace ()
   "Replace the preceding sexp with its value."

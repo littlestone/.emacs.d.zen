@@ -75,4 +75,7 @@
 ;; Move multiple-cursors history file to temps
 (setq mc/list-file (expand-file-name ".mc-lists.el" temporary-file-directory))
 
+;; Every buffer would be cleaned up before it's saved
+(add-hook 'before-save-hook 'cleanup-buffer)
+
 (provide 'init-misc)

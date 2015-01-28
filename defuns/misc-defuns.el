@@ -1,4 +1,7 @@
-;;; Misc defuns go here
+;;; =======================
+;;; + Misc defuns go here +
+;;; =======================
+
 ;;; It wouldn't hurt to look for patterns and extract once in a while
 
 (defmacro create-simple-keybinding-command (name key)

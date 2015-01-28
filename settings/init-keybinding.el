@@ -76,20 +76,19 @@
 (global-set-key (kbd "C-S-f") (lambda () (interactive) (ignore-errors (forward-char 5))))
 (global-set-key (kbd "C-S-b") (lambda () (interactive) (ignore-errors (backward-char 5))))
 
-;; Edit file with sudo
-(global-set-key (kbd "M-s e") 'sudo-edit)
+;; Use regex searches by default.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; Copy file path to kill ring
-(global-set-key (kbd "C-x M-w") 'copy-current-file-path)
+;; Visual regexp
+(define-key global-map (kbd "M-&") 'vr/query-replace)
+(define-key global-map (kbd "M-/") 'vr/replace)
 
-;; Add region to *multifile*
-(global-set-key (kbd "C-!") 'mf/mirror-region-in-multifile)
-
-;; Indentation help
-(global-set-key (kbd "M-j") (λ (join-line -1)))
-
-;; Bind "C-c r" for function replace-string
-(global-set-key (kbd "C-c r") 'replace-string)
+;; Keyboard macro
+(global-set-key (kbd "C-c M-n") 'insert-kbd-macro)
+(global-set-key (kbd "C-c M-i") 'insert-kbd-macro)
 
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c C-e") 'eval-and-replace)
@@ -103,25 +102,34 @@
 ;; Eval and print last s-expression (C-j is used by Paredit for inserting new line and indent)
 (global-set-key (kbd "C-c C-j") 'eval-print-last-sexp)
 
+;; Bind "C-c r" for function replace-string
+(global-set-key (kbd "C-c r") 'replace-string)
+
+;; Edit file with sudo
+(global-set-key (kbd "M-s e") 'sudo-edit)
+
+;; Copy file path to kill ring
+(global-set-key (kbd "C-x M-w") 'copy-current-file-path)
+
+;; Add region to *multifile*
+(global-set-key (kbd "C-!") 'mf/mirror-region-in-multifile)
+
+;; Indentation help
+(global-set-key (kbd "M-j") (lambda (join-line -1)))
+
+;; Comment/uncomment block
+(global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-c u") 'uncomment-region)
+
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
-
-;; Use regex searches by default.
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
 
 ;; Zap to char
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "s-z") (lambda (char) (interactive "cZap up to char backwards: ") (zap-up-to-char -1 char)))
 (global-set-key (kbd "M-Z") (lambda (char) (interactive "cZap to char: ") (zap-to-char 1 char)))
 (global-set-key (kbd "s-Z") (lambda (char) (interactive "cZap to char backwards: ") (zap-to-char -1 char)))
-
-;; Comment/uncomment block
-(global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-c u") 'uncomment-region)
 
 ;; Killing text
 (global-set-key [remap paredit-kill] (bol-with-prefix paredit-kill))
@@ -192,7 +200,6 @@
 (global-set-key (kbd "%") 'goto-match-paren)
 
 ;; vim's ci and co commands
-(require 'change-inner)
 (global-set-key (kbd "M-I") 'change-inner)
 (global-set-key (kbd "M-O") 'change-outer)
 
@@ -217,6 +224,9 @@
 
 ;; Open the current file or dired marked files in external app
 (global-set-key (kbd "<f6>") 'ergoemacs-open-in-external-app)
+
+;; Manage external services from within Emacs
+(global-set-key (kbd "<C-f6>") 'prodigy)
 
 ;; Toggle linum-mode
 (global-set-key (kbd "<f7>") 'linum-mode)
