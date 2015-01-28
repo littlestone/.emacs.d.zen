@@ -52,6 +52,7 @@
 
 ;; org-mode
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 
 ;; mql-mode
 (add-to-list 'auto-mode-alist '("\\.mq4$" . mql-mode))

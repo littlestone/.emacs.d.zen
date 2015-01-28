@@ -27,6 +27,7 @@
                      golden-ratio
                      guide-key
                      helm
+                     helm-swoop
                      highlight-escape-sequences
                      js2-mode
                      js2-refactor

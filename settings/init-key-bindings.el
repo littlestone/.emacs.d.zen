@@ -147,6 +147,8 @@
 (global-set-key [remap org-kill-line] (bol-with-prefix org-kill-line))
 (global-set-key [remap kill-line] (bol-with-prefix kill-line))
 (global-set-key (kbd "C-k") (bol-with-prefix kill-line))
+(global-set-key (kbd "M-k") 'kill-whole-line)
+(global-set-key (kbd "C-M-k") 'kill-sentence)
 (global-set-key (kbd "M-h") 'kill-region-or-backward-word)
 
 ;; Use M-w for copy-line if no active region
@@ -215,24 +217,32 @@
 (global-set-key (kbd "C-c C-F") 'fold-this)
 (global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
 
-;; Emulation of the vi % command
-(global-set-key (kbd "%") 'goto-match-paren)
-
 ;; vim's ci and co commands
 (global-set-key (kbd "M-I") 'change-inner)
 (global-set-key (kbd "M-O") 'change-outer)
-
 (global-set-key (kbd "s-i") 'copy-inner)
 (global-set-key (kbd "s-o") 'copy-outer)
+
+;; Efficiently hopping squeezed lines
+(global-set-key (kbd "C-c s") 'helm-swoop)
+(global-set-key (kbd "C-c S") 'helm-swoop-back-to-last-point)
+(global-set-key (kbd "C-c M-s") 'helm-multi-swoop)
+(global-set-key (kbd "C-x M-s") 'helm-multi-swoop-all)
+
+;; Emulation of the vi % comman
+(global-set-key (kbd "%") 'goto-match-paren)
 
 ;; Show line number for goto-line
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-;; List packages
+;; Emacs package manager
 (global-set-key (kbd "C-x p") 'package-list-packages)
 
-;; Magit
+;; Emacs git interface
 (global-set-key (kbd "C-x m") 'magit-status)
+
+;; Emacs web wowser
+(global-set-key (kbd "C-x w") 'eww)
 
 ;;;
 ;;;============================================================================
