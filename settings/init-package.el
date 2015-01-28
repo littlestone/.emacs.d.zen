@@ -77,9 +77,7 @@
 (add-to-list 'load-path (expand-file-name "emacs-powerline" site-lisp-dir))
 (add-to-list 'load-path (expand-file-name "xah-elisp-mode" site-lisp-dir))
 
-;; My package initializations
-(require 'init-os)
-(require 'init-hippie)
+;; My miscellaneous package configurations
 (require 'init-mode-mapping)
 (require 'init-auto-complete)
 (require 'init-misc)
@@ -161,6 +159,7 @@
 (eval-after-load 'cider '(require 'init-cider))
 (eval-after-load 'paredit '(require 'init-paredit))
 (eval-after-load 'flycheck '(require 'init-flycheck))
+(eval-after-load 'hippie-expand '(require 'init-hippie))
 (eval-after-load 'markdown-mode '(require 'init-markdown-mode))
 
 (provide 'init-package)

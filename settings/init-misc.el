@@ -2,6 +2,8 @@
 ;;; + Miscellaneous Emacs Configurations +
 ;;; ======================================
 
+(require 'init-os)
+
 ;; Seed the random-number generator
 (random t)
 

@@ -1,3 +1,7 @@
+;;; ===============================================
+;;; + Modern Emacs Syntax Checking Configurations +
+;;; ===============================================
+
 (require 'flycheck)
 
 (defun magnars/adjust-flycheck-automatic-syntax-eagerness ()

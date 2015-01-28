@@ -1,3 +1,9 @@
+;;; ======================================
+;;; + Emacs Markdown Mode Configurations +
+;;; ======================================
+
+(eval-after-load 'markdown-mode '(require 'init-markdown-mode))
+
 (setq markdown-imenu-generic-expression
       '(("title"  "^\\(.*\\)[\n]=+$" 1)
         ("h2-"    "^\\(.*\\)[\n]-+$" 1)
