@@ -53,3 +53,10 @@
             (fill-paragraph nil))))
 
       (put this-command 'stateIsCompact-p (if currentStateIsCompact nil t)))))
+
+(defun toggle-line-move-visual ()
+  "Toggle behavior of up/down arrow key, by visual line vs logical line."
+  (interactive)
+  (if line-move-visual
+      (setq line-move-visual nil)
+    (setq line-move-visual t)))

@@ -87,8 +87,9 @@
 (define-key global-map (kbd "M-/") 'vr/replace)
 
 ;; Keyboard macro
-(global-set-key (kbd "C-c M-n") 'insert-kbd-macro)
 (global-set-key (kbd "C-c M-i") 'insert-kbd-macro)
+(global-set-key (kbd "C-c M-n") 'name-last-kbd-macro)
+(global-set-key (kbd "C-c M-m") 'apply-macro-to-region-lines)
 
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c C-e") 'eval-and-replace)

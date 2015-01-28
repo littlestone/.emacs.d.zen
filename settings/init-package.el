@@ -78,8 +78,19 @@
 (add-to-list 'load-path (expand-file-name "xah-elisp-mode" site-lisp-dir))
 
 ;; My miscellaneous package configurations
+(require 'init-os)
+(require 'init-org)
+(require 'init-helm)
+(require 'init-dired)
+(require 'init-magit)
+(require 'init-slime)
+(require 'init-cider)
+(require 'init-hippie)
+(require 'init-paredit)
+(require 'init-flycheck)
 (require 'init-mode-mapping)
 (require 'init-auto-complete)
+(require 'init-markdown-mode)
 (require 'init-misc)
 
 ;; Load all user defined elisp functions
@@ -149,17 +160,5 @@
 (require 'highlight-escape-sequences)
 (hes-mode)
 (put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
-
-;; Load stuff on demand
-(eval-after-load 'org '(require 'init-org))
-(eval-after-load 'helm '(require 'init-helm))
-(eval-after-load 'dired '(require 'init-dired))
-(eval-after-load 'magit '(require 'init-magit))
-(eval-after-load 'slime '(require 'init-slime))
-(eval-after-load 'cider '(require 'init-cider))
-(eval-after-load 'paredit '(require 'init-paredit))
-(eval-after-load 'flycheck '(require 'init-flycheck))
-(eval-after-load 'hippie-expand '(require 'init-hippie))
-(eval-after-load 'markdown-mode '(require 'init-markdown-mode))
 
 (provide 'init-package)
