@@ -148,6 +148,8 @@
 
 ;; Xah's enhaned emacs emacs lisp code
 (require 'xah-elisp-mode)
+(dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
+  (add-hook hook 'xah-elisp-mode))
 
 ;; Live web development with Emacs
 (require 'skewer-mode)
