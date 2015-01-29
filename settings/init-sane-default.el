@@ -27,6 +27,10 @@
 ;; All roads lead to $HOME
 (setq default-directory "~/")
 
+;; Set persoanl info explicit
+(setq user-full-name "Sai")
+(setq user-mail-address "razorsniper@gmail.com")
+
 ;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
 
@@ -97,11 +101,6 @@
 ;; Add parts of each file's directory to the buffer name if not unique
 (setq uniquify-buffer-name-style 'forward)
 
-;; A saner ediff
-(setq ediff-diff-options "-w")
-(setq ediff-split-window-function 'split-window-horizontally)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
 ;; Nic says eval-expression-print-level needs to be set to nil (turned off)
 ;; so that you can always see what's happening.
 (setq eval-expression-print-level nil)
@@ -112,6 +111,11 @@
 ;; TAB completion
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
+
+;; A saner ediff
+(setq ediff-diff-options "-w")
+(setq ediff-split-window-function 'split-window-horizontally)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; When popping the mark, continue popping until the cursor actually moves
 ;; Also, if the last command was a copy - skip past all the expand-region cruft.

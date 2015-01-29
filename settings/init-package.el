@@ -9,6 +9,7 @@
                      buffer-move
                      change-inner
                      cider
+                     shell-command
                      dash
                      dash-functional
                      diminish
@@ -90,6 +91,7 @@
 (require 'init-org)
 (require 'init-helm)
 (require 'init-dired)
+(require 'init-shell)
 (require 'init-magit)
 (require 'init-slime)
 (require 'init-cider)

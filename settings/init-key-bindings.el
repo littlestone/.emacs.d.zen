@@ -40,6 +40,12 @@
 (global-set-key (kbd "M-~") 'mc/sort-regions)
 (global-set-key (kbd "H-~") 'mc/insert-numbers)
 
+;; Set anchor to start rectangular-region-mode
+(global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
+
+;; Replace rectangle-text with inline-string-rectangle
+(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+
 ;; Navigation bindings
 (global-set-key (kbd "<C-prior>") 'beginning-of-buffer)
 (global-set-key (kbd "<C-next>") 'end-of-buffer)
@@ -155,6 +161,10 @@
 (global-set-key (kbd "M-w") 'save-region-or-current-line)
 (global-set-key (kbd "M-W") (λ (save-region-or-current-line 1)))
 
+;; Make shell more convenient, and suspend-frame less
+(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-x M-z") 'suspend-frame)
+
 ;; Manipulate whitespace
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 
@@ -209,7 +219,7 @@
 (global-set-key (kbd "C-S-y") 'yank-unindented)
 
 ;; Perform general cleanup
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
+(global-set-key (kbd "C-c =") 'cleanup-buffer)
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 ;; Fold the active region
