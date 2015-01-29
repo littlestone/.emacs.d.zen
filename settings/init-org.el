@@ -15,10 +15,18 @@
                            (define-key org-mode-map (kbd "C-c c") 'org-capture)
                            (define-key org-mode-map (kbd "C-c l") 'org-store-link)))
 
-;; org-mode: Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
-(setq org-replace-disputed-keys t)
+;; TODO keywords
+(setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(i@/!)" "|" "DONE(d!)" "CANCELLED(c@)" "DEFERRED(f@)")))
 
-;; Information to record when a task moves to the DONE state
+;; TODO keywords colors
+(setq org-todo-keyword-faces '(("TODO" . (:foreground "DeepSkyBlue" :weight bold))
+                               ("IN-PROGRESS" . (:foreground "Yellow" :weight bold))
+                               ("DONE" . (:foreground "Green" :weight bold))
+                               ("CANCELLED" . (:foreground "LemonChiffon" :weight bold))
+                               ("DEFERRED" . (:foreground "Magenta" :weight bold))							   
+                               ))
+
+;; To capture time stamps and/or notes when TODO state changes
 (setq org-log-done t)
 
 ;; Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
@@ -29,14 +37,5 @@
 
 ;; Enable single character alphabetical bullets
 (setq org-list-allow-alphabetical t)
-
-;; org-mode colors
-(setq org-todo-keyword-faces '(("TODO" . (:foreground "DeepSkyBlue" :weight bold))
-                               ("IN-PROGRESS" . (:foreground "yellow" :weight bold))
-                               ("WAITING" . (:foreground "LemonChiffon" :weight bold))
-                               ("DONE" . (:foreground "green" :weight bold))
-                               ("CANCELLED" . (:foreground "magenta" :weight bold))
-                               ("DEFERRED" . (:foreground "BlueViolet" :weight bold))
-                               ))
 
 (provide 'init-org)

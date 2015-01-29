@@ -64,6 +64,7 @@
 (delete-selection-mode 1)
 
 ;; Save a list of recent files visited. (open recent file with C-x f)
+(require 'recentf)
 (recentf-mode +1)
 (setq recentf-max-saved-items 50) ; just 20 is too recent
 
