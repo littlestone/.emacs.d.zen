@@ -9,7 +9,6 @@
                      buffer-move
                      change-inner
                      cider
-                     shell-command
                      dash
                      dash-functional
                      diminish
@@ -49,6 +48,7 @@
                      projectile
                      restclient
                      s
+                     shell-command
                      simplezen
                      skewer-mode
                      slime
@@ -84,6 +84,7 @@
 (dolist (file (directory-files site-lisp-dir  t "\\w+"))
   (when (file-regular-p file)
     (load file)))
+(add-to-list 'load-path (expand-file-name "emacs-bash-completion" site-lisp-dir))
 (add-to-list 'load-path (expand-file-name "emacs-powerline" site-lisp-dir))
 (add-to-list 'load-path (expand-file-name "xah-elisp-mode" site-lisp-dir))
 
