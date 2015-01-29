@@ -35,6 +35,7 @@
                      js2-refactor
                      json-mode
                      litable
+                     macrostep
                      markdown-mode
                      magit
                      monokai-theme
@@ -155,6 +156,10 @@
 (require 'xah-elisp-mode)
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'xah-elisp-mode))
+
+;; Interactive macro expansion for Emacs Lisp
+(require 'macrostep)
+(define-key emacs-lisp-mode-map (kbd "C-c e") 'macrostep-expand)
 
 ;; Live web development with Emacs
 (require 'skewer-mode)
