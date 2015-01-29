@@ -15,8 +15,7 @@
 
 ;; Highlight the current line; set a custom face, so we can
 ;; recognize from the normal marking (selection)
-(defface hl-line '((t (:background "gray21")))
-  "Face to use for `hl-line-face'." :group 'hl-line)
+(defface hl-line '((t (:background "gray21"))) "Face to use for `hl-line-face'." :group 'hl-line)
 (setq hl-line-face 'hl-line)
 (global-hl-line-mode t) ; turn it on for all modes by default
 
