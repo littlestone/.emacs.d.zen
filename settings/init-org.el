@@ -27,13 +27,16 @@
 ;; Fontify org-mode code blocks
 (setq org-src-fontify-natively t)
 
+;; Enable single character alphabetical bullets
+(setq org-list-allow-alphabetical t)
+
 ;; org-mode colors
 (setq org-todo-keyword-faces '(("TODO" . (:foreground "DeepSkyBlue" :weight bold))
                                ("IN-PROGRESS" . (:foreground "yellow" :weight bold))
-                               ("WAITING" . (:foreground "light yellow" :weight bold))
+                               ("WAITING" . (:foreground "LemonChiffon" :weight bold))
                                ("DONE" . (:foreground "green" :weight bold))
                                ("CANCELLED" . (:foreground "magenta" :weight bold))
-                               ("DEFERRED" . (:foreground "DarkGoldenrod3" :weight bold))
+                               ("DEFERRED" . (:foreground "BlueViolet" :weight bold))
                                ))
 
 (provide 'init-org)
