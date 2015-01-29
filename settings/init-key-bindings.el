@@ -201,7 +201,7 @@
 (global-set-key (kbd "C-c C-b") 'quick-switch-buffer)
 
 ;; Killing buffer
-(global-set-key (kbd "C-c k") 'kill-this-buffer)
+(global-set-key (kbd "s-k") 'kill-this-buffer)
 
 ;; Quickly switch to scratch buffer
 (global-set-key (kbd "C-c <tab>") 'goto-scratch)
