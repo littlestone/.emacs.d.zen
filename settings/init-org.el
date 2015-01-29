@@ -15,6 +15,9 @@
                            (define-key org-mode-map (kbd "C-c c") 'org-capture)
                            (define-key org-mode-map (kbd "C-c l") 'org-store-link)))
 
+;; org-mode: Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
+(setq org-replace-disputed-keys t)
+
 ;; Information to record when a task moves to the DONE state
 (setq org-log-done t)
 

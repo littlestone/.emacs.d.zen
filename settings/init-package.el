@@ -27,6 +27,7 @@
                      golden-ratio
                      guide-key
                      helm
+                     helm-projectile
                      helm-swoop
                      highlight-escape-sequences
                      js2-mode
@@ -42,6 +43,8 @@
                      paredit
                      paredit-everywhere
                      perspective
+                     persp-projectile
+                     projectile
                      restclient
                      s
                      simplezen

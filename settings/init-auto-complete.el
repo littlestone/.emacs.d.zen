@@ -24,7 +24,7 @@
 (setq ac-dwim t)
 (setq ac-use-menu-map t)
 (setq ac-disable-inline t)
-(setq ac-delay 2)
+(setq ac-delay 0) ; faster than default 0.1s
 (setq ac-auto-start 2)
 (setq ac-auto-show-menu t)
 (setq ac-quick-help-delay 0)

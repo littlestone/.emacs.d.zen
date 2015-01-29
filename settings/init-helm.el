@@ -82,4 +82,16 @@
   ;; Face name is `helm-swoop-line-number-face`
   (setq helm-swoop-use-line-number-face t))
 
+;; helm-projectile
+(progn
+  (require 'projectile)
+  (projectile-global-mode)
+  (require 'helm-projectile)
+  (projectile-global-mode)
+  (helm-projectile-on)
+  (setq projectile-completion-system 'helm)
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-switch-project-action 'helm-projectile)
+  (add-to-list 'projectile-globally-ignored-directories "backup"))
+
 (provide 'init-helm)
