@@ -51,4 +51,20 @@ prefix argument."
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
         (t (self-insert-command (or arg 1)))))
 
+(defun reload-dotemacs ()
+  "Reload your init.el without restarting Emacs"
+  (interactive)
+  (load-file (expand-file-name "init.el" user-emacs-directory)))
+
+(defun ue-byte-recompile ()
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d" 0))
+
+(defun toggle-transparency ()
+  (interactive)
+  (let ((param (cadr (frame-parameter nil 'alpha))))
+    (if (and param (/= param 100))
+        (set-frame-parameter nil 'alpha '(100 100))
+      (set-frame-parameter nil 'alpha '(95 95)))))
+
 (provide 'my-defuns)

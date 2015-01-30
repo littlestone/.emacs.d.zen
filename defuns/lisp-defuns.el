@@ -22,8 +22,3 @@
   (dolist (mode modes)
     (add-hook (intern (concat (symbol-name mode) "-mode-hook"))
               hook)))
-
-(defun reload-emacs ()
-  "reload your init.el without restarting Emacs"
-  (interactive)
-  (load-file (expand-file-name "init.el" user-emacs-directory)))
