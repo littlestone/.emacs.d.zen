@@ -16,18 +16,18 @@
                            (define-key org-mode-map (kbd "C-c l") 'org-store-link)))
 
 ;; TODO keywords
-(setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS(i@/!)" "|" "DONE(d!)" "CANCELLED(c@)" "DEFERRED(f@)")))
+(setq org-todo-keywords '((sequence "TODO(t)" "IN-PROGRESS" "|" "DONE(d)" "CANCELLED(c@)" "DEFERRED(f@)")))
 
 ;; TODO keywords colors
 (setq org-todo-keyword-faces '(("TODO" . (:foreground "DeepSkyBlue" :weight bold))
                                ("IN-PROGRESS" . (:foreground "Yellow" :weight bold))
                                ("DONE" . (:foreground "Green" :weight bold))
                                ("CANCELLED" . (:foreground "LemonChiffon" :weight bold))
-                               ("DEFERRED" . (:foreground "Magenta" :weight bold))							   
+                               ("DEFERRED" . (:foreground "Magenta" :weight bold))
                                ))
 
 ;; To capture time stamps and/or notes when TODO state changes
-(setq org-log-done t)
+(setq org-log-done 'time)
 
 ;; Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
 (setq org-replace-disputed-keys t)
